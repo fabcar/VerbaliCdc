@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0f1419;
+  color: #e6edf3;
+}
+
+header {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #30363d;
+  background: radial-gradient(circle at top left, rgba(88,166,255,0.2), transparent 60%);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+h2 {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+  color: #9da7b3;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.search-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+#search {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #30363d;
+  background: #161b22;
+  color: #e6edf3;
+  font-size: 1rem;
+}
+
+#search:focus {
+  outline: 2px solid #58a6ff;
+  outline-offset: 2px;
+}
+
+.hint {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #9da7b3;
+}
+
+.hint code {
+  background: #161b22;
+  padding: 0.1rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.results-section {
+  margin-top: 1.5rem;
+}
+
+.result-card {
+  border-radius: 0.9rem;
+  border: 1px solid #30363d;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.9rem;
+  background: #161b22;
+}
+
+.result-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.3rem 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.result-file {
+  font-weight: 600;
+}
+
+.result-meta {
+  font-size: 0.85rem;
+  color: #9da7b3;
+}
+
+.result-delibere {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+.result-delibere strong {
+  color: #58a6ff;
+}
+
+.result-actions {
+  margin-top: 0.6rem;
+}
+
+.result-actions a {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #58a6ff;
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.result-actions a:hover {
+  background: #58a6ff;
+  color: #0f1419;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #9da7b3;
+  border-top: 1px solid #30363d;
+  background: #0d1117;
+}

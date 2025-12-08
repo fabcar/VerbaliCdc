@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Libro Verbali – Collegio Docenti ITTS “C. Grassi”</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Libro dei Verbali – Collegio Docenti</h1>
+    <h2>ITTS “C. Grassi” – Torino</h2>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <label for="search">Cerca delibera, data, testo…</label>
+      <input id="search" type="text" placeholder="Es: Delibera n° 8 a.s. 2023-24, uscita studenti, 2023-10-10">
+      <p class="hint">
+        Suggerimenti: prova con <code>Delibera n°</code>, anno scolastico (es. <code>2023-24</code>), data (es. <code>2023-10-10</code>) o parole chiave.
+      </p>
+    </section>
+
+    <section id="results" class="results-section">
+      <!-- risultati della ricerca -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Archivio digitale interno del Collegio Docenti – ITTS “C. Grassi”.</p>
+  </footer>
+
+  <script src="search.js"></script>
+</body>
+</html>
