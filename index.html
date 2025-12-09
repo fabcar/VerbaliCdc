@@ -57,8 +57,23 @@
   </main>
 
   <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth-compat.js"></script>
+ <!-- Firebase compat (OBBLIGATORIO SU GITHUB PAGES) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAzPfEgyS2ziCaofh1PQX2j77ybIg9z3-k",
+    authDomain: "autentica-579fa.firebaseapp.com",
+    projectId: "autentica-579fa",
+    storageBucket: "autentica-579fa.firebasestorage.app",
+    messagingSenderId: "303013464592",
+    appId: "1:303013464592:web:65827f58c9ee2d62b85895",
+    measurementId: "G-EGLZRNT2GG"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+</script>
 
   <!-- Script autenticazione + ricerca -->
   <script src="search.js"></script>
