@@ -1,78 +1,117 @@
-let idx;
 let documents = [];
 
+// Carico i dati dal data.json
 fetch("data.json")
   .then(res => res.json())
   .then(data => {
-    documents = data;
-
-    idx = lunr(function () {
-      this.ref("id");
-      this.field("delibere");
-      this.field("data");
-      this.field("anno_scolastico");
-      this.field("file");
-
-      documents.forEach(doc => this.add(doc));
-    });
+    documents = data || [];
+    popolaAnniScolastici();
   });
 
-const searchInput = document.getElementById("search");
+const selectAnno = document.getElementById("anno");
+const inputOggetto = document.getElementById("oggetto");
+const btnCerca = document.getElementById("cerca");
 const resultsDiv = document.getElementById("results");
 
-searchInput.addEventListener("input", function () {
-  const query = this.value.trim();
-  if (!query || !idx) {
-    resultsDiv.innerHTML = "";
+// Popola il menu a tendina degli anni scolastici
+function popolaAnniScolastici() {
+  const anni = new Set();
+  documents.forEach(d => {
+    if (d.anno_scolastico) anni.add(d.anno_scolastico);
+  });
+
+  Array.from(anni)
+    .sort()
+    .forEach(as => {
+      const opt = document.createElement("option");
+      opt.value = as;
+      opt.textContent = as;
+      selectAnno.appendChild(opt);
+    });
+}
+
+// Estrae "Delibera n° X" dalla riga di testo
+function estraiNumeroDelibera(riga) {
+  const re = /Delibera\s+n[°º]?\s*[_\s]*([0-9]+)/i;
+  const m = riga.match(re);
+  if (m && m[1]) return m[1].trim();
+  return "";
+}
+
+// Azione di ricerca
+function eseguiRicerca() {
+  const annoSelezionato = selectAnno.value;
+  const testo = inputOggetto.value.trim().toLowerCase();
+
+  if (!annoSelezionato && !testo) {
+    resultsDiv.innerHTML = "<p>Seleziona un anno scolastico e/o inserisci parte dell'oggetto.</p>";
     return;
   }
 
-  let results;
-  try {
-    results = idx.search(query);
-  } catch (e) {
-    const lower = query.toLowerCase();
-    results = documents
-      .filter(d =>
-        (d.delibere || "").toLowerCase().includes(lower) ||
-        (d.data || "").includes(query) ||
-        (d.anno_scolastico || "").includes(query) ||
-        (d.file || "").toLowerCase().includes(lower)
-      )
-      .map(d => ({ ref: d.id }));
+  // Filtra per anno scolastico
+  let filtrati = documents;
+  if (annoSelezionato) {
+    filtrati = filtrati.filter(d => d.anno_scolastico === annoSelezionato);
   }
 
-  if (!results.length) {
-    resultsDiv.innerHTML = "<p>Nessun risultato trovato.</p>";
+  let risultati = [];
+
+  filtrati.forEach(doc => {
+    const delibereText = doc.delibere || "";
+    if (!delibereText) return;
+
+    // Le righe delle delibere sono separate da " | "
+    const righe = delibereText.split("|").map(r => r.trim()).filter(r => r.length > 0);
+
+    righe.forEach(riga => {
+      if (!testo || riga.toLowerCase().includes(testo)) {
+        const num = estraiNumeroDelibera(riga);
+        risultati.push({
+          numero: num || "(numero non rilevato)",
+          data: doc.data || "(data non indicata)",
+          anno_scolastico: doc.anno_scolastico || "",
+          testo: riga,
+          file: doc.file || ""
+        });
+      }
+    });
+  });
+
+  if (!risultati.length) {
+    resultsDiv.innerHTML = "<p>Nessuna delibera trovata con i criteri indicati.</p>";
     return;
   }
 
   let html = "";
 
-  results.forEach(r => {
-    const doc = documents.find(d => d.id === r.ref);
-    if (!doc) return;
-
+  risultati.forEach(r => {
     html += `
       <div class="result-card">
         <div class="result-header">
-          <div class="result-file">${doc.file}</div>
+          <div class="result-file">
+            Delibera n° <strong>${r.numero}</strong>
+          </div>
           <div class="result-meta">
-            ${doc.data ? `Data: ${doc.data}` : ""}
-            ${doc.anno_scolastico ? ` – A.S. ${doc.anno_scolastico}` : ""}
+            Data: ${r.data}
+            ${r.anno_scolastico ? " – A.S. " + r.anno_scolastico : ""}
           </div>
         </div>
         <div class="result-delibere">
-          ${doc.delibere
-            ? `<strong>Delibere:</strong> ${doc.delibere}`
-            : "<em>Nessuna delibera rilevata nel testo del verbale.</em>"}
+          <strong>Testo:</strong> ${r.testo}
         </div>
+        ${r.file ? `
         <div class="result-actions">
-          <a href="verbali/${doc.file}" target="_blank">Apri verbale (PDF)</a>
-        </div>
+          <a href="verbali/${r.file}" target="_blank">Apri verbale (PDF)</a>
+        </div>` : ""}
       </div>
     `;
   });
 
   resultsDiv.innerHTML = html;
+}
+
+// Eventi
+btnCerca.addEventListener("click", eseguiRicerca);
+inputOggetto.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") eseguiRicerca();
 });
