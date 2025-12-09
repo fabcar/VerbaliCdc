@@ -1,39 +1,19 @@
-/*******************************
- *  CONFIGURAZIONE FIREBASE
- *******************************/
-const firebaseConfig = {
-  apiKey: "AIzaSyAzPfEgySZiCaofh1PQX2j77ybIg9z3-k",
-  authDomain: "autentica-579fa.firebaseapp.com",
-  projectId: "autentica-579fa",
-  storageBucket: "autentica-579fa.firebasestorage.app",
-  messagingSenderId: "303013464592",
-  appId: "1:303013464592:web:7936da781836b5d0b85895",
-  measurementId: "G-8HR0ZCBKQ0"
-};
-
-// Inizializza Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-
-/*******************************
- *  ELEMENTI UI
- *******************************/
 const loginSection = document.getElementById("login-section");
 const appSection = document.getElementById("app-section");
 const btnLoginGoogle = document.getElementById("login-google");
 const btnLogout = document.getElementById("logout");
 const loginError = document.getElementById("login-error");
 
-/*******************************
- *  AUTENTICAZIONE GOOGLE
- *******************************/
+// Il firebaseConfig è in index.html, NON qui
+const auth = firebase.auth();
+
 auth.onAuthStateChanged(user => {
   if (user) {
-    // Utente LOGGATO → mostra app
+    // Utente loggato → mostra app
     loginSection.style.display = "none";
     appSection.style.display = "block";
   } else {
-    // Non loggato → mostra login
+    // Utente non loggato → mostra login
     appSection.style.display = "none";
     loginSection.style.display = "block";
   }
@@ -43,23 +23,17 @@ auth.onAuthStateChanged(user => {
 btnLoginGoogle?.addEventListener("click", () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   auth.signInWithPopup(provider)
-    .then(() => {
-      loginError.textContent = "";
-    })
-    .catch(err => {
-      console.error(err);
-      loginError.textContent = "Errore di accesso: " + err.message;
-    });
+    .then(() => loginError.textContent = "")
+    .catch(err => loginError.textContent = "Errore: " + err.message);
 });
 
 // LOGOUT
-btnLogout?.addEventListener("click", () => {
-  auth.signOut();
-});
+btnLogout?.addEventListener("click", () => auth.signOut());
 
 /*******************************
- *  LOGICA RICERCA DELIBERE
+ *  RICERCA DELIBERE
  *******************************/
+
 let documents = [];
 
 const selectAnno = document.getElementById("anno");
@@ -67,70 +41,49 @@ const inputOggetto = document.getElementById("oggetto");
 const btnCerca = document.getElementById("cerca");
 const resultsDiv = document.getElementById("results");
 
-// Carico data.json
+// Carica le delibere
 fetch("data.json")
   .then(res => res.json())
   .then(data => {
     documents = data || [];
-    popolaAnniScolastici();
-  })
-  .catch(err => {
-    console.error("Errore caricamento data.json:", err);
+    popolaAnni();
   });
 
-// Popola menu anni scolastici
-function popolaAnniScolastici() {
-  const anni = new Set();
-  documents.forEach(d => {
-    if (d.anno_scolastico) anni.add(d.anno_scolastico);
+// Popola anni scolastici
+function popolaAnni() {
+  const anni = new Set(documents.map(d => d.anno_scolastico).filter(Boolean));
+  [...anni].sort().forEach(as => {
+    const opt = document.createElement("option");
+    opt.value = as;
+    opt.textContent = as;
+    selectAnno.appendChild(opt);
   });
-
-  Array.from(anni)
-    .sort()
-    .forEach(as => {
-      const opt = document.createElement("option");
-      opt.value = as;
-      opt.textContent = as;
-      selectAnno.appendChild(opt);
-    });
 }
 
-// Estrae numero della delibera
-function estraiNumeroDelibera(riga) {
-  const re = /Delibera\s+n[°º]?\s*[_\s]*([0-9]+)/i;
-  const m = riga.match(re);
-  return (m && m[1]) ? m[1].trim() : "";
+// Estrae n° della delibera dal testo
+function estraiNumero(linea) {
+  const m = linea.match(/Delibera\s+n[°º]?\s*[_\s]*([0-9]+)/i);
+  return (m && m[1]) ? m[1] : "—";
 }
 
-// Ricerca vera
+// Ricerca
 function eseguiRicerca() {
   const annoSel = selectAnno.value;
-  const testo = inputOggetto.value.trim().toLowerCase();
-
-  if (!annoSel && !testo) {
-    resultsDiv.innerHTML = "<p>Seleziona un anno scolastico e/o inserisci parte dell'oggetto.</p>";
-    return;
-  }
-
-  let filtrati = documents;
-  if (annoSel) {
-    filtrati = filtrati.filter(d => d.anno_scolastico === annoSel);
-  }
+  const testo = inputOggetto.value.toLowerCase().trim();
 
   let risultati = [];
 
-  filtrati.forEach(doc => {
-    const righe = (doc.delibere || "")
-      .split("|")
-      .map(r => r.trim())
-      .filter(r => r);
+  documents.forEach(doc => {
+    if (annoSel && doc.anno_scolastico !== annoSel) return;
+
+    const righe = (doc.delibere || "").split("|").map(r => r.trim()).filter(r => r);
 
     righe.forEach(riga => {
       if (!testo || riga.toLowerCase().includes(testo)) {
         risultati.push({
-          numero: estraiNumeroDelibera(riga) || "—",
-          data: doc.data || "(data assente)",
-          anno_scolastico: doc.anno_scolastico || "",
+          numero: estraiNumero(riga),
+          data: doc.data || "—",
+          anno: doc.anno_scolastico || "",
           testo: riga,
           file: doc.file || ""
         });
@@ -143,34 +96,18 @@ function eseguiRicerca() {
     return;
   }
 
-  let html = "";
-  risultati.forEach(r => {
-    html += `
-      <div class="result-card">
-        <div class="result-header">
-          <div class="result-file">Delibera n° <strong>${r.numero}</strong></div>
-          <div class="result-meta">
-            Data: ${r.data} ${r.anno_scolastico ? "– A.S. " + r.anno_scolastico : ""}
-          </div>
-        </div>
-        <div class="result-delibere">
-          <strong>Testo:</strong> ${r.testo}
-        </div>
-        ${
-          r.file
-            ? `<div class="result-actions">
-                 <a href="verbali/${r.file}" target="_blank">Apri verbale (PDF)</a>
-               </div>`
-            : ""
-        }
+  resultsDiv.innerHTML = risultati.map(r => `
+    <div class="result-card">
+      <div class="result-header">
+        <strong>Delibera n° ${r.numero}</strong>
+        <span>Data: ${r.data} – A.S. ${r.anno}</span>
       </div>
-    `;
-  });
-
-  resultsDiv.innerHTML = html;
+      <div><strong>Testo:</strong> ${r.testo}</div>
+      ${r.file ? `<div><a href="verbali/${r.file}" target="_blank">Apri PDF</a></div>` : ""}
+    </div>
+  `).join("");
 }
 
-// Eventi
 btnCerca?.addEventListener("click", eseguiRicerca);
 inputOggetto?.addEventListener("keydown", e => {
   if (e.key === "Enter") eseguiRicerca();
