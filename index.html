@@ -2,33 +2,42 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Libro Verbali – Collegio Docenti ITTS “C. Grassi”</title>
+  <title>Verbali – Collegio Docenti ITTS “C. Grassi”</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/lunr/lunr.js"></script>
 </head>
 <body>
   <header>
-    <h1>Libro dei Verbali – Collegio Docenti</h1>
+    <h1>Archivio Delibere Collegio Docenti</h1>
     <h2>ITTS “C. Grassi” – Torino</h2>
   </header>
 
   <main>
     <section class="search-section">
-      <label for="search">Cerca delibera, data, testo…</label>
-      <input id="search" type="text" placeholder="Es: Delibera n° 8 a.s. 2023-24, uscita studenti, 2023-10-10">
+      <label for="anno">Anno scolastico</label>
+      <select id="anno">
+        <option value="">Tutti gli anni scolastici</option>
+        <!-- Le opzioni verranno riempite in automatico da search.js -->
+      </select>
+
+      <label for="oggetto" style="margin-top:1rem;">Oggetto (o parte di oggetto)</label>
+      <input id="oggetto" type="text" placeholder="Es: uscita studenti, PTOF, libri di testo…">
+
+      <button id="cerca" style="margin-top:1rem;">Cerca delibere</button>
+
       <p class="hint">
-        Suggerimenti: prova con <code>Delibera n°</code>, anno scolastico (es. <code>2023-24</code>), data (es. <code>2023-10-10</code>) o parole chiave.
+        Il sistema cerca nelle righe delle delibere (es. <code>Delibera n° 8 a.s. 2023-24 – Uscita studenti…</code>)
+        filtrando per anno scolastico e testo dell’oggetto.
       </p>
     </section>
 
     <section id="results" class="results-section">
-      <!-- risultati della ricerca -->
+      <!-- qui compaiono i risultati -->
     </section>
   </main>
 
   <footer>
-    <p>Archivio digitale interno del Collegio Docenti – ITTS “C. Grassi”.</p>
+    <p>Uso interno – Collegio Docenti ITTS “C. Grassi”.</p>
   </footer>
 
   <script src="search.js"></script>
