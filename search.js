@@ -3,7 +3,7 @@
  *******************************/
 const CLASSROOM_COURSE_ID = "ODc3MzUyNjIzMDNa";  // corso Collegio
 // Metti qui il tuo OAuth Client ID creato in Google Cloud Console
-const GOOGLE_CLIENT_ID = "INSERISCI_CLIENT_ID_APPS_GOOGLE";
+const GOOGLE_CLIENT_ID = "303013464592-ufq9q4uk8m24u6avvhcp2kuupq9t0ldb.apps.googleusercontent.com";
 const GOOGLE_API_KEY = "INSERISCI_API_KEY_SE_LHAI"; // opzionale se lavori solo con token auth
 
 // Scopes per Classroom + Drive
