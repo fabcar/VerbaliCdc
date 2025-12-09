@@ -2,65 +2,57 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Archivio Delibere – Collegio Docenti ITTS “C. Grassi”</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archivio Delibere – ITTS C. Grassi</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-  <header>
-    <h1>Archivio Delibere Collegio Docenti</h1>
-    <h2>ITTS “C. Grassi” – Torino</h2>
-  </header>
 
-  <!-- Sezione LOGIN -->
-  <main id="login-section">
-    <section class="search-section">
-      <p>Accesso riservato al personale autorizzato.</p>
-      <button id="login-google" class="mt-1">Accedi con Google</button>
-      <p class="hint">
-        Usa il tuo account Google di istituto o quello abilitato dall'amministratore.
-      </p>
-      <p id="login-error" style="color:#ff7b72; margin-top:0.5rem;"></p>
-    </section>
-  </main>
+<header>
+  <h1>Archivio Delibere Collegio Docenti</h1>
+  <h2>ITTS “C. Grassi” – Torino</h2>
+</header>
 
-  <!-- Sezione APP (visibile solo dopo login) -->
-  <main id="app-section" style="display:none;">
-    <section class="search-section">
-      <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
-        <div>
-          <label for="anno">Anno scolastico</label>
-          <select id="anno">
-            <option value="">Tutti gli anni scolastici</option>
-          </select>
-        </div>
+<!-- LOGIN -->
+<main id="login-section">
+  <section class="search-section">
+    <p>Accesso riservato al personale autorizzato.</p>
+    <button id="login-google">Accedi con Google</button>
+    <p id="login-error" style="color:#ff7b72;"></p>
+  </section>
+</main>
 
-        <div>
-          <button id="logout" class="mt-1">Esci</button>
-        </div>
+<!-- APP -->
+<main id="app-section" style="display:none;">
+  <section class="search-section">
+
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+      <div>
+        <label for="anno">Anno scolastico</label>
+        <select id="anno">
+          <option value="">Tutti</option>
+        </select>
       </div>
 
-      <label for="oggetto" class="mt-1">Oggetto (o parte di oggetto)</label>
-      <input id="oggetto" type="text" placeholder="Es: uscita studenti, PTOF, libri di testo…">
+      <button id="logout" class="mt-1">Esci</button>
+    </div>
 
-      <button id="cerca" class="mt-1">Cerca delibere</button>
+    <label class="mt-1" for="oggetto">Oggetto (o parte)</label>
+    <input id="oggetto" type="text" placeholder="Es: libri, PTOF, uscite…">
 
-      <p class="hint">
-        Il sistema cerca nelle righe delle delibere (es. <code>Delibera n° 8 a.s. 2023-24 – Uscita studenti…</code>)
-        filtrando per anno scolastico e testo dell’oggetto, e restituisce <strong>numero della delibera e data</strong>.
-      </p>
-    </section>
+    <button id="cerca" class="mt-1">Cerca delibere</button>
 
-    <section id="results" class="results-section">
-      <!-- risultati -->
-    </section>
-  </main>
+  </section>
 
-  <!-- Firebase SDK -->
- <!-- Firebase compat (OBBLIGATORIO SU GITHUB PAGES) -->
+  <section id="results" class="results-section"></section>
+</main>
+
+<!-- Firebase compat (necessario su GitHub Pages) -->
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 
+<!-- ⚠️ firebaseConfig SOLO QUI -->
 <script>
   const firebaseConfig = {
     apiKey: "AIzaSyAzPfEgyS2ziCaofh1PQX2j77ybIg9z3-k",
@@ -71,11 +63,11 @@
     appId: "1:303013464592:web:65827f58c9ee2d62b85895",
     measurementId: "G-EGLZRNT2GG"
   };
-
   firebase.initializeApp(firebaseConfig);
 </script>
 
-  <!-- Script autenticazione + ricerca -->
-  <script src="search.js"></script>
+<!-- Script app -->
+<script src="search.js"></script>
+
 </body>
 </html>
