@@ -1,5 +1,20 @@
 /*******************************
- *  AUTENTICAZIONE GOOGLE
+ *  CONFIG
+ *******************************/
+const CLASSROOM_COURSE_ID = "ODc3MzUyNjIzMDNa";  // corso Collegio
+// Metti qui il tuo OAuth Client ID creato in Google Cloud Console
+const GOOGLE_CLIENT_ID = "INSERISCI_CLIENT_ID_APPS_GOOGLE";
+const GOOGLE_API_KEY = "INSERISCI_API_KEY_SE_LHAI"; // opzionale se lavori solo con token auth
+
+// Scopes per Classroom + Drive
+const GOOGLE_SCOPES = [
+  "https://www.googleapis.com/auth/classroom.courses.readonly",
+  "https://www.googleapis.com/auth/classroom.courseworkmaterials.readonly",
+  "https://www.googleapis.com/auth/drive.readonly"
+].join(" ");
+
+/*******************************
+ *  AUTENTICAZIONE GOOGLE (Firebase)
  *******************************/
 
 const loginSection = document.getElementById("login-section");
@@ -8,22 +23,27 @@ const btnLoginGoogle = document.getElementById("login-google");
 const btnLogout = document.getElementById("logout");
 const loginError = document.getElementById("login-error");
 
-// firebaseConfig è in index.html
 const auth = firebase.auth();
 
+// Stato utente Firebase
 auth.onAuthStateChanged(user => {
   if (user) {
     loginSection.style.display = "none";
     appSection.style.display = "block";
+    // dopo login Firebase, inizializziamo gapi
+    initGapiClient_();
   } else {
     appSection.style.display = "none";
     loginSection.style.display = "block";
   }
 });
 
-// LOGIN
+// LOGIN (solo Firebase, per ora)
 btnLoginGoogle?.addEventListener("click", () => {
   const provider = new firebase.auth.GoogleAuthProvider();
+  // IMPORTANTISSIMO: chiediamo scopes extra di Classroom/Drive
+  GOOGLE_SCOPES.split(" ").forEach(scope => provider.addScope(scope));
+
   auth.signInWithPopup(provider)
     .then(() => {
       loginError.textContent = "";
@@ -34,22 +54,105 @@ btnLoginGoogle?.addEventListener("click", () => {
     });
 });
 
-// LOGOUT
 btnLogout?.addEventListener("click", () => auth.signOut());
 
 /*******************************
- *  RICERCA DELIBERE
+ *  INTEGRAZIONE GAPI (Classroom / Drive)
+ *******************************/
+
+let gapiInited = false;
+let gapiAuthed = false;
+let classroomVerbali = []; // qui memorizziamo i verbali trovati in Classroom
+
+function initGapiClient_() {
+  if (gapiInited) return;
+
+  gapi.load("client:auth2", async () => {
+    try {
+      await gapi.client.init({
+        apiKey: GOOGLE_API_KEY, // opzionale se usi solo OAuth
+        clientId: GOOGLE_CLIENT_ID,
+        discoveryDocs: [
+          "https://classroom.googleapis.com/$discovery/rest?version=v1",
+          "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"
+        ],
+        scope: GOOGLE_SCOPES
+      });
+
+      gapiInited = true;
+
+      // Portiamo dentro a gapi l'utente Firebase già loggato:
+      await ensureGapiSignedIn_();
+      await caricaVerbaliDaClassroom_();
+    } catch (e) {
+      console.error("Errore init gapi:", e);
+    }
+  });
+}
+
+async function ensureGapiSignedIn_() {
+  const auth2 = gapi.auth2.getAuthInstance();
+  if (!auth2) return;
+
+  if (!auth2.isSignedIn.get()) {
+    await auth2.signIn();
+  }
+  gapiAuthed = auth2.isSignedIn.get();
+}
+
+async function caricaVerbaliDaClassroom_() {
+  if (!gapiAuthed) return;
+
+  try {
+    // Leggiamo i materiali del corso (courseWorkMaterials)
+    const res = await gapi.client.classroom.courses.courseWorkMaterials.list({
+      courseId: CLASSROOM_COURSE_ID
+    });
+
+    const materials = res.result.courseWorkMaterial || [];
+    classroomVerbali = [];
+
+    for (const m of materials) {
+      // cerchiamo allegati Drive
+      const driveAttachments = (m.materials || [])
+        .flatMap(mat => mat.driveFile ? [mat.driveFile] : []);
+
+      for (const d of driveAttachments) {
+        const file = d.driveFile;
+        if (!file) continue;
+
+        // possiamo filtrare per tipo PDF, se necessario, usando Drive API
+        classroomVerbali.push({
+          titolo: m.title || file.title || file.id,
+          fileId: file.id,
+          alternateLink: file.alternateLink,
+          // se la data non è nei dati, puoi inferirla dal titolo
+          data: m.updateTime || m.creationTime || "",
+          organo: "collegio"
+        });
+      }
+    }
+
+    console.log("Verbali da Classroom:", classroomVerbali);
+    // A questo punto puoi usarli per popolare l'indice o trasformarli nel "data.json" interno
+  } catch (e) {
+    console.error("Errore nel recuperare materiali Classroom:", e);
+  }
+}
+
+/*******************************
+ *  RICERCA DELIBERE (come prima)
  *******************************/
 
 let documents = [];
 
 const selectAnno = document.getElementById("anno");
-const selectOrgano = document.getElementById("organo");  // 👈 tendina organo
+const selectOrgano = document.getElementById("organo");
 const inputOggetto = document.getElementById("oggetto");
 const btnCerca = document.getElementById("cerca");
 const resultsDiv = document.getElementById("results");
 
-// Carica le delibere
+// Carica data.json locale (finché non usiamo SOLO Classroom)
 fetch("data.json")
   .then(res => res.json())
   .then(data => {
@@ -57,7 +160,6 @@ fetch("data.json")
     popolaAnni();
   });
 
-// Popola anni scolastici
 function popolaAnni() {
   const anni = new Set(documents.map(d => d.anno_scolastico).filter(Boolean));
   [...anni].sort().forEach(as => {
@@ -68,13 +170,11 @@ function popolaAnni() {
   });
 }
 
-// Estrae n° della delibera dal testo
 function estraiNumero(linea) {
   const m = linea.match(/Delibera\s+n[°º]?\s*[_\s]*([0-9]+)/i);
   return (m && m[1]) ? m[1] : "—";
 }
 
-// Ricerca
 function eseguiRicerca() {
   const annoSel = selectAnno.value;
   const organoSel = selectOrgano ? selectOrgano.value : "";
@@ -83,27 +183,15 @@ function eseguiRicerca() {
   let risultati = [];
 
   documents.forEach(doc => {
-    // 1. filtro per ANNO
     if (annoSel && doc.anno_scolastico !== annoSel) return;
 
-    // 2. filtro per ORGANO
-    // Se nel JSON non esiste doc.organo:
-    // - lo consideriamo "collegio" di default
     const organoDoc = doc.organo || "collegio";
-
     if (organoSel) {
-      // se l'utente ha scelto "collegio", mostriamo:
-      // - quelli con organo = "collegio"
-      // - quelli senza campo organo (default collegio)
-      if (organoSel === "collegio" && !(organoDoc === "collegio")) return;
-      // se ha scelto "consiglio", mostriamo solo organo = "consiglio"
+      if (organoSel === "collegio" && organoDoc !== "collegio") return;
       if (organoSel === "consiglio" && organoDoc !== "consiglio") return;
     }
 
-    const righe = (doc.delibere || "")
-      .split("|")
-      .map(r => r.trim())
-      .filter(r => r);
+    const righe = (doc.delibere || "").split("|").map(r => r.trim()).filter(r => r);
 
     righe.forEach(riga => {
       if (!testo || riga.toLowerCase().includes(testo)) {
