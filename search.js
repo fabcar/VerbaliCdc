@@ -25,8 +25,13 @@ auth.onAuthStateChanged(user => {
 btnLoginGoogle?.addEventListener("click", () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   auth.signInWithPopup(provider)
-    .then(() => loginError.textContent = "")
-    .catch(err => loginError.textContent = "Errore: " + err.message);
+    .then(() => {
+      loginError.textContent = "";
+    })
+    .catch(err => {
+      console.error(err);
+      loginError.textContent = "Errore: " + err.message;
+    });
 });
 
 // LOGOUT
@@ -39,12 +44,12 @@ btnLogout?.addEventListener("click", () => auth.signOut());
 let documents = [];
 
 const selectAnno = document.getElementById("anno");
-const selectOrgano = document.getElementById("organo");  // 👈 NUOVO
+const selectOrgano = document.getElementById("organo");  // 👈 tendina organo
 const inputOggetto = document.getElementById("oggetto");
 const btnCerca = document.getElementById("cerca");
 const resultsDiv = document.getElementById("results");
 
-// Carica data.json
+// Carica le delibere
 fetch("data.json")
   .then(res => res.json())
   .then(data => {
@@ -63,27 +68,37 @@ function popolaAnni() {
   });
 }
 
-// Estrae numero della delibera
+// Estrae n° della delibera dal testo
 function estraiNumero(linea) {
   const m = linea.match(/Delibera\s+n[°º]?\s*[_\s]*([0-9]+)/i);
   return (m && m[1]) ? m[1] : "—";
 }
 
-// RICERCA
+// Ricerca
 function eseguiRicerca() {
   const annoSel = selectAnno.value;
-  const organoSel = selectOrgano.value;   // 👈 NUOVO
+  const organoSel = selectOrgano ? selectOrgano.value : "";
   const testo = inputOggetto.value.toLowerCase().trim();
 
   let risultati = [];
 
   documents.forEach(doc => {
-
-    // Filtra per ANNO
+    // 1. filtro per ANNO
     if (annoSel && doc.anno_scolastico !== annoSel) return;
 
-    // Filtra per ORGANO (solo se presente nel json)
-    if (organoSel && doc.organo && doc.organo !== organoSel) return;
+    // 2. filtro per ORGANO
+    // Se nel JSON non esiste doc.organo:
+    // - lo consideriamo "collegio" di default
+    const organoDoc = doc.organo || "collegio";
+
+    if (organoSel) {
+      // se l'utente ha scelto "collegio", mostriamo:
+      // - quelli con organo = "collegio"
+      // - quelli senza campo organo (default collegio)
+      if (organoSel === "collegio" && !(organoDoc === "collegio")) return;
+      // se ha scelto "consiglio", mostriamo solo organo = "consiglio"
+      if (organoSel === "consiglio" && organoDoc !== "consiglio") return;
+    }
 
     const righe = (doc.delibere || "")
       .split("|")
@@ -97,7 +112,7 @@ function eseguiRicerca() {
           data: doc.data || "—",
           anno: doc.anno_scolastico || "",
           testo: riga,
-          organo: doc.organo || "",
+          organo: organoDoc,
           file: doc.file || ""
         });
       }
@@ -115,7 +130,7 @@ function eseguiRicerca() {
         <strong>Delibera n° ${r.numero}</strong>
         <span>Data: ${r.data} – A.S. ${r.anno}</span>
       </div>
-      <div><strong>Organo:</strong> ${r.organo || "—"}</div>
+      <div><strong>Organo:</strong> ${r.organo}</div>
       <div><strong>Testo:</strong> ${r.testo}</div>
       ${r.file ? `<div><a href="verbali/${r.file}" target="_blank">Apri PDF</a></div>` : ""}
     </div>
@@ -123,4 +138,6 @@ function eseguiRicerca() {
 }
 
 btnCerca?.addEventListener("click", eseguiRicerca);
-inputOggetto?.addEventListener("keydown", e => { if (e.key === "Enter") eseguiRicerca(); });
+inputOggetto?.addEventListener("keydown", e => {
+  if (e.key === "Enter") eseguiRicerca();
+});
