@@ -12,12 +12,33 @@
     <h2>ITTS “C. Grassi” – Torino</h2>
   </header>
 
-  <main>
+  <!-- Sezione LOGIN -->
+  <main id="login-section">
     <section class="search-section">
-      <label for="anno">Anno scolastico</label>
-      <select id="anno">
-        <option value="">Tutti gli anni scolastici</option>
-      </select>
+      <p>Accesso riservato al personale autorizzato.</p>
+      <button id="login-google" class="mt-1">Accedi con Google</button>
+      <p class="hint">
+        Usa il tuo account Google di istituto o quello abilitato dall'amministratore.
+      </p>
+      <p id="login-error" style="color:#ff7b72; margin-top:0.5rem;"></p>
+    </section>
+  </main>
+
+  <!-- Sezione APP (visibile solo dopo login) -->
+  <main id="app-section" style="display:none;">
+    <section class="search-section">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+        <div>
+          <label for="anno">Anno scolastico</label>
+          <select id="anno">
+            <option value="">Tutti gli anni scolastici</option>
+          </select>
+        </div>
+
+        <div>
+          <button id="logout" class="mt-1">Esci</button>
+        </div>
+      </div>
 
       <label for="oggetto" class="mt-1">Oggetto (o parte di oggetto)</label>
       <input id="oggetto" type="text" placeholder="Es: uscita studenti, PTOF, libri di testo…">
@@ -35,10 +56,11 @@
     </section>
   </main>
 
-  <footer>
-    <p>Uso interno – Collegio Docenti ITTS “C. Grassi”.</p>
-  </footer>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth-compat.js"></script>
 
+  <!-- Script autenticazione + ricerca -->
   <script src="search.js"></script>
 </body>
 </html>
