@@ -1,6 +1,5 @@
 let documents = [];
 
-// Carico i dati dal data.json
 fetch("data.json")
   .then(res => res.json())
   .then(data => {
@@ -13,7 +12,6 @@ const inputOggetto = document.getElementById("oggetto");
 const btnCerca = document.getElementById("cerca");
 const resultsDiv = document.getElementById("results");
 
-// Popola il menu a tendina degli anni scolastici
 function popolaAnniScolastici() {
   const anni = new Set();
   documents.forEach(d => {
@@ -30,7 +28,6 @@ function popolaAnniScolastici() {
     });
 }
 
-// Estrae "Delibera n° X" dalla riga di testo
 function estraiNumeroDelibera(riga) {
   const re = /Delibera\s+n[°º]?\s*[_\s]*([0-9]+)/i;
   const m = riga.match(re);
@@ -38,7 +35,6 @@ function estraiNumeroDelibera(riga) {
   return "";
 }
 
-// Azione di ricerca
 function eseguiRicerca() {
   const annoSelezionato = selectAnno.value;
   const testo = inputOggetto.value.trim().toLowerCase();
@@ -48,7 +44,6 @@ function eseguiRicerca() {
     return;
   }
 
-  // Filtra per anno scolastico
   let filtrati = documents;
   if (annoSelezionato) {
     filtrati = filtrati.filter(d => d.anno_scolastico === annoSelezionato);
@@ -60,7 +55,6 @@ function eseguiRicerca() {
     const delibereText = doc.delibere || "";
     if (!delibereText) return;
 
-    // Le righe delle delibere sono separate da " | "
     const righe = delibereText.split("|").map(r => r.trim()).filter(r => r.length > 0);
 
     righe.forEach(riga => {
@@ -110,7 +104,6 @@ function eseguiRicerca() {
   resultsDiv.innerHTML = html;
 }
 
-// Eventi
 btnCerca.addEventListener("click", eseguiRicerca);
 inputOggetto.addEventListener("keydown", function (e) {
   if (e.key === "Enter") eseguiRicerca();

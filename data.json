@@ -1,16 +1,310 @@
 [
   {
     "id": "1",
-    "file": "",
-    "data": "2023-10-10",
-    "anno_scolastico": "2023-2024",
-    "delibere": "Delibera n° _8_ a.s. 2023-24 – Uscita studenti durante l’intervallo"
+    "file": "2020-02-03 Verbale-Cover-Odg-Delibere-Corr.pdf",
+    "data": "2020-02-03",
+    "anno_scolastico": "2019-2020",
+    "delibere": "Delibera n° _12_ a.s. 2019-20 | Delibera n° _ 13 _ a.s. 2019-20 | Delibera/Informativa n° _ 14 _ a.s. 2019-20"
   },
   {
-    "id": "2",
-    "file": "",
-    "data": "2023-12-03",
+    "id": "6",
+    "file": "2020-06-03 Verbale-Cover-Odg-Delibere(1).pdf",
+    "data": "2020-06-03",
+    "anno_scolastico": "2019-2020",
+    "delibere": "2. Delibera sui criteri di valutazione - apprendimenti - comportamento – PCTO; | 3. Delibera sull’adozione dei libri di testo a.s. 2020/21; | 2. Delibera sui criteri di valutazione - apprendimenti - comportamento – PCTO; | Delibera n° _ 15 _ a.s. 2019-20 | 3. Delibera sull’adozione dei libri di testo a.s. 2020/21; | Delibera n° _ 16 _ a.s. 2019-20"
+  },
+  {
+    "id": "8",
+    "file": "2020-06-26 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2020-06-26",
+    "anno_scolastico": "2019-2020",
+    "delibere": "1. Delibera verbale sedute precedenti | 2. Delibera avvio anno scolastico 20_21 | 3. Delibera scansione anno scolastico 20_21 | 6. Delibera formazione 20_21 (Sicurezza,Covid 19,Dad) | 8. Delibera commissione formazione classi primo e secondo biennio e ultimo anno | 9. Delibera commissione accoglienza | 10. Delibera Piano Annuale dell’Inclusività | 13.  Delibera partecipazione IFTS bando regionale | 1. Delibera verbale sedute precedenti; | Delibera n° _ 17 _ a.s. 2019-20 | 1. Delibera verbale sedute precedenti; | Delibera n° _ 18 _ a.s. 2019-20 | 2. Delibera avvio anno scolastico 20_21; | Delibera n° _ 19 _ a.s. 2019-20 | 3. Delibera scansione anno scolastico 20_21 ; | Delibera n° _ 20 _ a.s. 2019-20 | 6. Delibera formazione 20_21 (Sicurezza,Covid 19,Dad) ; | Delibera n° _ 27 _ a.s. 2019-20 | 8. Delibera commissione formazione classi primo e secondo biennio e ultimo anno ; | Delibera n° _ 21 _ a.s. 2019-20 | 9. Delibera commissione accoglienza ; | Delibera n° _ 22 _ a.s. 2019-20 | 10. Delibera Piano Annuale dell’Inclusività ; | Delibera n° _ 23 _ a.s. 2019-20 | Delibera n° _ 24 _ a.s. 2019-20 | Delibera n° _ 25 _ a.s. 2019-20 | 13. Delibera partecipazione IFTS bando regionale | Delibera n° _ 26 _ a.s. 2019-20"
+  },
+  {
+    "id": "9",
+    "file": "2020-09-01 Verbale-Cover-Odg-Delibere(1).pdf",
+    "data": "2020-09-01",
+    "anno_scolastico": "2020-2021",
+    "delibere": ""
+  },
+  {
+    "id": "11",
+    "file": "2020-09-11 Verbale-Cover-Odg-Delibere-Informative(1).pdf",
+    "data": "2020-09-11",
+    "anno_scolastico": "2020-2021",
+    "delibere": "Delibera n° _1_​ a.s. 2020-21 | Delibera n° _2_​ a.s. 2020-21 | Delibera n° _3_​ a.s. 2020-21 | Delibera n° _4_​ a.s. 2020-21 | Delibera n° _5_​ a.s. 2020-21"
+  },
+  {
+    "id": "14",
+    "file": "2020-10-29 Verbale-Cover-Odg-Delibere-Informative(1).pdf",
+    "data": "2020-10-29",
+    "anno_scolastico": "2020-2021",
+    "delibere": "Delibera n° _6_​ a.s. 2020-21 | Delibera n° _7_​ a.s. 2020-21 | Delibera n° _8_​ a.s. 2020-21 | Delibera n° _11_​ a.s. 2019-20 | Delibera n° _9_​ a.s. 2019-20 | Delibera n° _10_​ a.s. 2019-20 | Delibera n° _12_​ a.s. 2019-20 | Delibera n° _13_​ a.s. 2019-20"
+  },
+  {
+    "id": "17",
+    "file": "2021-02-25 Verbale-Cover-Odg-Delibere-Informative(1).pdf",
+    "data": "2021-02-25",
+    "anno_scolastico": "2020-2021",
+    "delibere": "Delibera n° _16_ a.s. 2020-21 | Delibera n° _17_ a.s. 2020-21 | Delibera n° _18_ a.s. 2020-2021 | Delibera n° _19_ a.s. 2020-2021"
+  },
+  {
+    "id": "20",
+    "file": "2021-05-19 Verbale-Cover-Odg-Delibere-Informative(1).pdf",
+    "data": "2021-05-19",
+    "anno_scolastico": "2020-2021",
+    "delibere": "Delibera n° _20_ a.s. 2020-21 | Delibera n° _21_ a.s. 2020-21 | Delibera n° _22_ a.s. 2020-21 | Delibera n° _23_ a.s. 2020-21 | Delibera n° _24_ a.s. 2020-21 | Delibera n° _25_ a.s. 2020-21 | Delibera n° _26_ a.s. 2020-21 | Delibera n° _27_ a.s. 2020-21"
+  },
+  {
+    "id": "22",
+    "file": "2021-06-29 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2021-06-29",
+    "anno_scolastico": "2020-2021",
+    "delibere": "1. Delibera verbale seduta precedente | 3. Delibera scansione anno scolastico 20_21 | 6. Delibera Piano Annuale per l’inclusività | 8. Delibera “Blended education - Scuola 4.0 ” | 9. Delibera Regolamento riunioni online | 1. Delibera verbale seduta precedente; | Delibera n° _ 28 _ a.s. 2020-21 | 3. Delibera scansione anno scolastico 21_22 ; | Delibera n° _ 29 _ a.s. 2020-21 | Delibera n° _ 30 _ a.s. 2020-21 | Delibera n° _ 31 _ a.s. 2020-21 | 6. Delibera Piano Annuale dell’Inclusività ; | Delibera n° _ 32 _ a.s. 2020-21 | Delibera n° _ 33 _ a.s. 2020-21 | 8. Delibera “Blended education - Scuola 4.0 ” | Delibera n° _ 34 _ a.s. 2020-21 | 9. Delibera Regolamento riunioni online | Delibera n° _ 35 _ a.s. 2020-21"
+  },
+  {
+    "id": "23",
+    "file": "2021-09-10 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2021-09-10",
+    "anno_scolastico": "2021-2022",
+    "delibere": "1. Delibera Approvazione verbale della seduta precedente | Delibera n° _2_ a.s. 2021-22 | Delibera n° _3_ a.s. 2021-22 | Delibera n° _4_ a.s. 2021-22 | Delibera n° _5_ a.s. 2021-22 | Delibera n° _6_ a.s. 2021-22"
+  },
+  {
+    "id": "25",
+    "file": "2021-10-28 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2021-10-28",
+    "anno_scolastico": "2021-2022",
+    "delibere": "a. Delibera programmazione per competenze  (delibera n.11) | b. Delibera Unità tematiche  (delibera n.12) | Delibera n° _7_ a.s. 2021-22 | Delibera n° _8_ a.s. 2021-22 | Delibera n° _9_ a.s. 2021-22 | Delibera n° _10_ a.s. 2021-22 | a. Delibera programmazione per competenze (delibera n.11) | Delibera n° _11_ a.s. 2021-22 | b. Delibera Unità tematiche (delibera n.12) | Delibera n° _12_ a.s. 2021-22 | Delibera n° _13_ a.s. 2021-22 | Delibera n° _14_ a.s. 2021-22 | Delibera n° _15_ a.s. 2021-22 | Delibera di presa d’atto n° _16_ a.s. 2021-22"
+  },
+  {
+    "id": "26",
+    "file": "2022-05-13 Verbale-Cover-Odg-Delibere-Informative(1).pdf",
+    "data": "2022-05-13",
+    "anno_scolastico": "2021-2022",
+    "delibere": "Delibera n° _22_ a.s. 2021-22 | Delibera n° _23_ a.s. 2021-22 | Delibera n° _24_ a.s. 2021-22 | Delibera n° _25_ a.s. 2021-22 | Delibera n° _26_ a.s. 2021-22 | Delibera n° _27_ a.s. 2021-22 | La DS  mette all'ordine del giorno un riesame dei criteri di valutazione generali già deliberati con “Delibera"
+  },
+  {
+    "id": "28",
+    "file": "2022-05-23Verbale-Cover-Odg-Delibere.docx.pdf",
+    "data": "2022-05-23",
+    "anno_scolastico": "2021-2022",
+    "delibere": "Delibera n° _ 17 _ a.s. 2021-22 | Delibera n° _ 18_ a.s. 2021-22"
+  },
+  {
+    "id": "29",
+    "file": "2022-09-08 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2022-09-08",
+    "anno_scolastico": "2022-2023",
+    "delibere": "Delibera Piano annuale delle attività.  (delibera n.3) | Delibera Organigramma di istituto. (delibera n.4) | Delibera Tutor dei Docenti in anno di prova.  (delibera n.6) | Delibera n° _1_ a.s. 2022-23 | Delibera n° _2_ a.s. 2022-23 | 3. Delibera Piano annuale delle attività | Delibera n° _3_ a.s. 2022-23 | 4. Delibera Organigramma di Istituto | Delibera n° _4_ a.s. 2022-23 | Delibera n° _5_ a.s. 2022-23 | 6. Delibera Tutor dei Docenti in anno di prova | Delibera n° _6_ a.s. 2022-23"
+  },
+  {
+    "id": "30",
+    "file": "2022-10-27 Verbale-Cover-Odg-Delibere(1).pdf",
+    "data": "2022-10-27",
+    "anno_scolastico": "2022-2023",
+    "delibere": "Delibera n° _7_ a.s. 2022-23 | Delibera n° _8_ a.s. 2022-23 | Delibera n° _9_ a.s. 2022-23 | Delibera n° _10_ a.s. 2022-23"
+  },
+  {
+    "id": "32",
+    "file": "2022-11-29_Verbale-Cover-Odg-Delibere.docx.pdf",
+    "data": "2022-11-29",
+    "anno_scolastico": "2022-2023",
+    "delibere": "Delibera n° _ 6_ a.s. 2022-23 | Delibera n° _ 7_ a.s. 2022-23 | Delibera n° _ 8_ a.s. 2022-23 | Delibera n° _ 9_ a.s. 2022-23 | Delibera n° _ 10 a.s. 2022-23 | Delibera n° _ 11 a.s. 2022-23 | Delibera n° _ 12 a.s. 2022-23 | Delibera n° _ 13 a.s. 2022-23 | Delibera n° _ 14 a.s. 2022-23 | Delibera n° _ 15 a.s. 2022-23 | Delibera n° _ 16 a.s. 2022-23 | Delibera n° _ 17 a.s. 2022-23 | Delibera n° _ 18 a.s. 2022-23"
+  },
+  {
+    "id": "33",
+    "file": "2023-02-13_Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2023-02-13",
+    "anno_scolastico": "2022-2023",
+    "delibere": "Delibera n° 19 _ a.s. 2022-23 | hanno partecipato i consiglieri di tutte le componenti si mette in votazione Delibera Variazioni di | Delibera n° 20 _ a.s. 2022-23 | hanno partecipato i consiglieri di tutte le componenti si mette in votazione Delibera Programma | Delibera n° 21 _ a.s. 2022-23 | Delibera n° 22 _ a.s. 2022-23 | Delibera n° 23 _ a.s. 2022-23 | Delibera n° 24 _ a.s. 2022-23 | Delibera n° 25 _ a.s. 2022-23"
+  },
+  {
+    "id": "34",
+    "file": "2023-02-28 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2023-02-28",
+    "anno_scolastico": "2022-2023",
+    "delibere": "Delibera n° _11_ a.s. 2022-23 | Delibera n° _12_ a.s. 2022-23 | Delibera n° _13_ a.s. 2022-23 | Delibera di presa d’atto n° _14_ a.s. 2022-23 | Delibera n° _15_ a.s. 2022-23 | Delibera n° _16_ a.s. 2022-23 | Delibera n° _17_ a.s. 2022-23 | Delibera n° _18_ a.s. 2022-23"
+  },
+  {
+    "id": "35",
+    "file": "2023-05-18 Verbale-Cover-Odg-Delibere-Informative(1).pdf",
+    "data": "2023-05-18",
+    "anno_scolastico": "2022-2023",
+    "delibere": "Delibera n° _19_ a.s. 2022-23 | Delibera n° _20_ a.s. 2022-23 | Delibera n° _21_ a.s. 2022-23 | Delibera n° _22_ a.s. 2022-23 | Delibera n° _23_ a.s. 2022-23 | Delibera n° _24_ a.s. 2022-23 | Delibera n° _25_ a.s. 2022-23"
+  },
+  {
+    "id": "38",
+    "file": "2023-05-25_Verbale-Cover-Odg-Delibere(1).pdf",
+    "data": "2023-05-25",
+    "anno_scolastico": "2022-2023",
+    "delibere": "Delibera n° 27 _ a.s. 2022-23 | Delibera n° 28 _ a.s. 2022-23 | Delibera n° 29 _ a.s. 2022-23 | Delibera n° 30 _ a.s. 2022-23 | Delibera n° 31 _ a.s. 2022-23 | Delibera n° 32 _ a.s. 2022-23 | Delibera n° 33 _ a.s. 2022-23"
+  },
+  {
+    "id": "41",
+    "file": "2023-06-30 Verbale-Cover-Odg-Delibere_4.pdf",
+    "data": "2023-06-30",
+    "anno_scolastico": "2022-2023",
+    "delibere": "1. Delibera verbale seduta precedente | 3. Delibera scansione anno scolastico 23_24 | 7. Delibera Piano Annuale per l’inclusività | 1. Delibera verbale seduta precedente; | Delibera n° _ 26 _ a.s. 2022-23 | 3. Delibera scansione anno scolastico 23_24 | 7. Delibera Piano Annuale per l’inclusività | Delibera n° _ 30 _ a.s. 2022-23"
+  },
+  {
+    "id": "42",
+    "file": "2023-07-11_Verbale-Cover-Odg-Delibere(1).pdf",
+    "data": "2023-07-11",
+    "anno_scolastico": "2022-2023",
+    "delibere": "2. Ratifica Delibera assunzione in bilancio PON Aeronautica | 4. Delibera adozione degli indirizzi e linee guida di adattamento al Regolamento UE 2016/679 | 6. Delibera Criteri selezione Tutor | 7. Delibera Criteri selezione Orientatori | 8. Delibera schema Orario delle lezioni | 10. Delibera Criteri per l’assegnazione delle cattedre | 11. Delibera Criteri per la distribuzione degli allievi nelle classi | 12. Delibera Variazioni di bilancio E.F. 2023; | 13. Delibera attuazione programma annuale E.F. 2023 al 30 giugno; | 14. Delibera scarichi inventariali; | Delibera n° 35 _ a.s. 2022-23 | Ratifica Delibera assunzione in bilancio PON Aeronautica | Ratifica Delibera assunzione in bilancio PON Aeronautica | Delibera n° 36 _ a.s. 2022-23 | componenti si mette in votazione Delibera rete di scuole | Delibera n° 37 _ a.s. 2022-23 | Delibera adozione degli indirizzi e linee guida di adattamento al Regolamento UE | partecipato i consiglieri di tutte le componenti si mette in votazione Delibera adozione degli | Delibera n° 38 _ a.s. 2022-23 | a cui hanno partecipato i consiglieri di tutte le componenti si mette in votazione Delibera Criteri | Delibera n° 39 _ a.s. 2022-23 | Delibera Criteri selezione Tutor | cui hanno partecipato i consiglieri di tutte le componenti si mette in votazione Delibera Criteri | Delibera n° 40 _ a.s. 2022-23 | Delibera Criteri selezione Orientatori | Delibera Criteri selezione Orientatori | Delibera n° 41 _ a.s. 2022-23 | Delibera schema Orario delle lezioni | consiglieri di tutte le componenti si mette in votazione Delibera schema Orario delle lezioni | Delibera n° 42 _ a.s. 2022-23 | Delibera n° 43 _ a.s. 2022-23 | Delibera Criteri per l’assegnazione delle cattedre | consiglieri di tutte le componenti si mette in votazione Delibera Criteri per l’assegnazione delle | Delibera n° 44 _ a.s. 2022-23 | Delibera Criteri per la distribuzione degli allievi nelle classi | consiglieri di tutte le componenti si mette in votazione Delibera Criteri per la distribuzione degli | Delibera n° 45 _ a.s. 2022-23 | Delibera Variazioni di bilancio; | hanno partecipato i consiglieri di tutte le componenti si mette in votazione Delibera Variazioni di | Delibera n° 46 _ a.s. 2022-23 | Delibera attuazione programma annuale al 30 giugno 2023; | mette in votazione Delibera attuazione programma annuale al 30 giugno 2023; | Delibera n° 47 _ a.s. 2022-23 | Delibera scarichi inventariali; | consiglieri di tutte le componenti si mette in votazione Delibera scarichi inventariali; | Delibera n° _ a.s. 2022-23 | Delibera n° _ a.s. 2022-23"
+  },
+  {
+    "id": "44",
+    "file": "2023-09-01 Verbale-Cover-Odg-Delibere (1) (1).pdf",
+    "data": "2023-09-01",
     "anno_scolastico": "2023-2024",
-    "delibere": "Delibera n° _12_ a.s. 2023-24 – Adozione libri di testo a.s. 2024-25"
+    "delibere": "● Delibera Approvazione verbale della seduta precedente | (Delibera n.1) | Delibera Approvazione verbale della seduta precedente | - Delibera n. 1 | Approvazione verbale del 30 Giugno 2023 - Delibera n. 1 | Delibera n° _ 1 _ a.s. 2023-24"
+  },
+  {
+    "id": "46",
+    "file": "2023-09-08 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2023-09-08",
+    "anno_scolastico": "2023-2024",
+    "delibere": "Delibera Approvazione verbale seduta 1 Settembre 2023       (delibera n.2) | Delibera Adozione Piano annuale delle attività a.s. 2023_24  (delibera n.3) | Delibera Organigramma d'istituto a.s._2023_24                      (delibera n.4) | Delibera Tutor dei Docenti in anno di prova                            (delibera n.6) | Delibera n° _2_ a.s. 2023-24 | Delibera Piano annuale delle attività | Delibera n° _3_ a.s. 2023-24 | Delibera Organigramma di Istituto | Delibera n° _4_ a.s. 2023-24 | Delibera n° _5_ a.s. 2023-24 | Delibera Tutor dei Docenti in anno di prova | Delibera n° _6_ a.s. 2023-24"
+  },
+  {
+    "id": "47",
+    "file": "2023-09-14_Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2023-09-14",
+    "anno_scolastico": "2023-2024",
+    "delibere": "Delibera n° _ a.s. 2023_24 | Delibera n° 50 _ a.s. 2023_24 | Ratifica Delibera Criteri da applicare in caso di esubero iscrizioni (Delibera 49) | studentesse o studenti in esubero Ratifica Delibera Criteri da applicare in caso di esubero iscrizioni | (Delibera 49) Dopo ampia discussione si pone in votazione la delibera n° 51 | Delibera n° 51 _ a.s. 2023_24 | Delibera n° _ a.s. 2023_24 | Delibera n° 52 _ a.s. 2023_24"
+  },
+  {
+    "id": "48",
+    "file": "2023-10-10 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2023-10-10",
+    "anno_scolastico": "2023-2024",
+    "delibere": "Delibera n° _7_ a.s. 2023-24"
+  },
+  {
+    "id": "49",
+    "file": "2023-10-26 Verbale-Cover-Odg-Delibere(1).pdf",
+    "data": "2023-10-26",
+    "anno_scolastico": "2023-2024",
+    "delibere": "Delibera n° _8_ a.s. 2023-24 | Delibera n° _9_ a.s. 2023-24 | Delibera n° _10_ a.s. 2023-24 | Delibera n° _11_ a.s. 2023-24 | Si inserisce in Delibera un file di presentazione sul PNFD che viene proposta al Collegio Docenti. | Delibera n° _11_ a.s. 2023-24"
+  },
+  {
+    "id": "51",
+    "file": "2023-11-29_Verbale-Cover-Odg-Delibere.docx(1).pdf",
+    "data": "2023-11-29",
+    "anno_scolastico": "2023-2024",
+    "delibere": "Delibera n° _ 6_ a.s. 2022-23 | Delibera n° _ 7_ a.s. 2022-23 | Delibera n° _ 8_ a.s. 2022-23 | Delibera n° _ 9_ a.s. 2022-23 | Delibera n° _ 10 a.s. 2022-23 | Delibera n° _ 11 a.s. 2022-23 | Delibera n° _ 12 a.s. 2022-23 | Delibera n° _ 13 a.s. 2022-23 | Delibera n° _ 14 a.s. 2022-23 | Delibera n° _ 15 a.s. 2022-23 | Delibera n° _ 16 a.s. 2022-23 | Delibera n° _ 17 a.s. 2022-23 | Delibera n° _ 18 a.s. 2022-23"
+  },
+  {
+    "id": "53",
+    "file": "2023-12-28 Verbale-Cover-Odg-Delibere(1).pdf",
+    "data": "2023-12-28",
+    "anno_scolastico": "2023-2024",
+    "delibere": ""
+  },
+  {
+    "id": "55",
+    "file": "2024-02-28 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2024-02-28",
+    "anno_scolastico": "2023-2024",
+    "delibere": "1. Approvazione verbale della seduta precedente; (Delibera n° 14/2024) | 3. Presa d’atto delibera n° 13 del 28 Dicembre 2023; (*corretto 2024 in 2023- Delibera n° 14bis/2024 ) | 7. Integrazione organigramma;(Delibera n° 15/2024) | 8. Integrazione PTOF; (Delibera n° 16/2024) | ○ Competenze STEM e multilinguistiche nelle scuole statali (D.M. 65/2023) (Delibera n° | 66/2023) (Delibera n° 18/2024) | ○ Animatori digitali 2022-2024 (Delibera n° 19/2024) | 1. Approvazione verbale della seduta precedente; (Delibera n° 14/2024) | Delibera n° _14_ a.s. 2023-24 | 1. Approvazione verbale della seduta precedente; (Delibera n° 14bis/2024) | Delibera n° _14bis_ a.s. 2023-24 | (Delibera n° 15/2024) | Delibera n° _15_ a.s. 2023-24 | (Delibera n° 16/2024) | Delibera n° _16_ a.s. 2023-24 | ○ Competenze STEM e multilinguistiche nelle scuole statali (D.M. 65/2023) (Delibera | Competenze STEM e multilinguistiche nelle scuole statali (D.M. 65/2023) (Delibera n° | Delibera n° _17_ a.s. 2023-24 | (D.M. 66/2023) (Delibera n° 18/2024) | (Delibera n° 18/2024) | Delibera n° _18_ a.s. 2023-24 | ○ Animatori digitali 2022-2024 (Delibera n° 19/2024) | Delibera n° _19_ a.s. 2023-24"
+  },
+  {
+    "id": "56",
+    "file": "2024-05-08 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2024-05-08",
+    "anno_scolastico": "2023-2024",
+    "delibere": "1. Approvazione verbale seduta precedente; (Delibera n° 20/2024) | Delibera n° _20_ a.s. 2023-24 | 2. Adozione dei libri di testo a.s. 2024/25; (Delibera n° 21/2024) | Delibera n° _21_ a.s. 2023-24 | 3. Calendario scolastico regionale; (Delibera di presa d’atto)"
+  },
+  {
+    "id": "57",
+    "file": "2024-06-28 Verbale-Cover-Odg-Delibere (1).pdf",
+    "data": "2024-06-28",
+    "anno_scolastico": "2023-2024",
+    "delibere": "1. Delibera verbale seduta precedente | 2. Delibera scansione anno scolastico 24_25 | 5. Delibera Piano Annuale per l’inclusività | 6. Delibera iscritti ripetenti per la seconda volta | 7. Delibera integrazione PTOF 22_25 relativa ai seguenti punti: | 1. Delibera verbale seduta precedente; | Delibera n° _ 22 _ a.s. 2023-24 | 2. Delibera scansione anno scolastico 24_25 | 5. Delibera Piano Annuale per l’inclusività | 6. Delibera iscritti ripetenti per la seconda volta | 7. Delibera integrazione PTOF 22_25 relativa ai seguenti punti: | Delibera n° _ 28 _ a.s. 2023-24 | Delibera n° _ 29 _ a.s. 2023-24 | Delibera n° _ 30 _ a.s. 2023-24"
+  },
+  {
+    "id": "62",
+    "file": "2024-09-02 Verbale-Cover-Odg-Delibere (2).pdf",
+    "data": "2024-09-02",
+    "anno_scolastico": "2024-2025",
+    "delibere": "● Delibera Approvazione verbale della seduta precedente | Delibera Approvazione verbale della seduta precedente"
+  },
+  {
+    "id": "64",
+    "file": "2024-09-10 Verbale-Cover-Odg-Delibere.pdf",
+    "data": "2024-09-10",
+    "anno_scolastico": "2024-2025",
+    "delibere": "1. Delibera Approvazione verbale seduta 28 Giugno 2024 | 2. Delibera Approvazione verbale seduta 2 Settembre 2024 | 3. Delibera Adozione Piano annuale delle attività a.s. 2024_25 (delibera n.3) | 4. Delibera Organigramma d'istituto a.s._2024_25 | 6. Delibera Tutor dei Docenti in anno di prova | 1. Delibera Approvazione verbale seduta 28 Giugno 2024 | Delibera n° _1_ a.s. 2024-25 | 2. Delibera Approvazione verbale seduta 2 Settembre 2024 | Delibera n° _2_ a.s. 2024-25 | 3. Delibera Adozione Piano annuale delle attività a.s. 2024_25 (delibera n.3) | Delibera n° _3_ a.s. 2024-25 | 4. Delibera Organigramma d'istituto a.s._2024_25 | Delibera n° _4_ a.s. 2024-25 | Delibera n° _5_ a.s. 2024-25 | 6. Delibera Tutor dei Docenti in anno di prova | Delibera n° _6_ a.s. 2024-25"
+  },
+  {
+    "id": "65",
+    "file": "2024-10-30 Verbale-Cover-Odg-Delibere (3).pdf",
+    "data": "2024-10-30",
+    "anno_scolastico": "2024-2025",
+    "delibere": "Delibera n° _7_ a.s. 2024-25 | Delibera n° _8_ a.s. 2024-25 | Delibera n° _9_ a.s. 2024-25 | Delibera n° _10_ a.s. 2024-25 | Delibera n° _11_ a.s. 2024-25 | Delibera n° _12_ a.s. 2024-25 | Delibera n° _13_ a.s. 2024-25"
+  },
+  {
+    "id": "68",
+    "file": "2024-12-03 Verbale-Cover-Odg-Delibere (1).pdf",
+    "data": "2024-12-03",
+    "anno_scolastico": "2024-2025",
+    "delibere": "Delibera n° _15_ a.s. 2024-25"
+  },
+  {
+    "id": "70",
+    "file": "2025-02-27 Verbale-Cover-Odg-Delibere (1) (3).pdf",
+    "data": "2025-02-27",
+    "anno_scolastico": "2024-2025",
+    "delibere": "1. Approvazione verbale della seduta precedente; (Delibera n° 16) | Delibera n° _16_ a.s. 2024-25 | 1. Approvazione verbale della seduta precedente; (Delibera n° 17) | Delibera n° _17_ a.s. 2024-25 | (Delibera n° 18) | Delibera n° _18_ a.s. 2024-25 | (Delibera n° 19) | Delibera n° _19_ a.s. 2024-25"
+  },
+  {
+    "id": "73",
+    "file": "2025-05-13 Verbale (2).pdf",
+    "data": "2025-05-13",
+    "anno_scolastico": "2024-2025",
+    "delibere": "8. Delibera integrazione odg 9. | (Delibera n° 20) | Delibera n° _20_  a.s. 2024-25 | 3. Adozione dei libri di testo a.s. 2025/26; (Delibera n° 21) | Delibera n° _21_  a.s. 2024-25  (presa d’atto) | Delibera n° _22_  a.s. 2024-25 | 8. Delibera integrazione odg."
+  },
+  {
+    "id": "76",
+    "file": "2025-06-30 Verbale-Cover-Odg-Delibere (1) (1).pdf",
+    "data": "2025-06-30",
+    "anno_scolastico": "2024-2025",
+    "delibere": "2. Delibera approvazione verbale seduta precedente | 3. Delibera scansione anno scolastico 2025-26 | 4. Delibera calendario scolastico 2025-26 | 6. Delibera Piano Annuale per l’inclusività | 7. Delibera iscritti ripetenti per la seconda volta | 8. Delibera integrazione PTOF 25-26 (Delibera unica) | 2. Delibera approvazione verbale seduta precedente; | Delibera approvazione verbale seduta precedente del 13/05/2025 rinviata; | 3. Delibera scansione anno scolastico 2025-26 | 4. Delibera calendario  scolastico 2025-26 | 6. Delibera Piano Annuale per l’inclusività | 7. Delibera iscritti ripetenti per la seconda volta | 8. Delibera integrazione PTOF 25-26 (Delibera unica) | Delibera n° _ 28 _ A.S. 2024-25 | Delibera n° _ 29 _ A.S. 2024-25 | Delibera n° _ 30 _ A.S. 2024-25 | Delibera n° _ 31 _ A.S. 2024-25 | Delibera n° _ 32 _ A.S. 2024-25"
+  },
+  {
+    "id": "78",
+    "file": "2025-09-01 Verbale-Cover-Odg-Delibere (1).pdf",
+    "data": "2025-09-01",
+    "anno_scolastico": "2025-2026",
+    "delibere": "● Delibera Approvazione verbali delle sedute precedenti | Delibera Approvazione verbale della seduta precedente"
+  },
+  {
+    "id": "81",
+    "file": "2025-09-09 Verbale-Cover-Odg-Delibere (2).pdf",
+    "data": "2025-09-09",
+    "anno_scolastico": "2025-2026",
+    "delibere": "1. Delibera Approvazione verbale seduta 13 Maggio 2025 | 2. Delibera Approvazione verbale seduta 30 Giugno 2025 | 3. Delibera Approvazione verbale seduta 1 Settembre 2025 | 4. Delibera Adozione Piano annuale delle attività a.s. 2025-26  (delibera n.4) | 5. Delibera Organigramma d'istituto a.s._2025_26 | 7. Delibera Tutor dei Docenti in anno di prova | 1. Delibera Approvazione verbale seduta 13 Maggio 2025 | Delibera n° _1_ a.s. 2025-26 | 2. Delibera Approvazione verbale seduta 30 Giugno 2025 | Delibera n° _2_ a.s. 2025-26 | 3. Delibera Approvazione verbale seduta 1 Settembre 2025 | Delibera n° _3_ a.s. 2025-26 | 4. Delibera Adozione Piano annuale delle attività a.s. 2025-26  (delibera n.4) | Delibera n° _4_ a.s. 2025-26 | 5. Delibera Organigramma d'istituto a.s._2025_26 | Delibera n° _5_ a.s. 2025-26 | Delibera n° _6_ a.s. 2025-26 | 7. Delibera Tutor dei Docenti in anno di prova       (delibera 7 non votata- informativa 6)"
+  },
+  {
+    "id": "83",
+    "file": "2025-09-10 Verbale-Cover-Odg-Delibere (2).pdf",
+    "data": "2025-09-10",
+    "anno_scolastico": "2025-2026",
+    "delibere": "1. Delibera Organigramma d'istituto a.s._2025_26 relativo alla funzione strumentale PTOF | 2. Delibera Tutor dei Docenti in anno di prova | 1. Delibera Organigramma d'istituto a.s._2025_26 relativo alla funzione strumentale PTOF | Delibera n° _9_ a.s. 2025-26 | 2. Delibera Tutor dei Docenti in anno di prova | Delibera n° _8_ a.s. 2025-26"
+  },
+  {
+    "id": "85",
+    "file": "verbale18Maggio23(1).pdf",
+    "data": "",
+    "anno_scolastico": "",
+    "delibere": "Delibera n° _19_ a.s. 2022-23 | Delibera n° _20_ a.s. 2022-23 | Delibera n° _21_ a.s. 2022-23 | Delibera n° _22_ a.s. 2022-23 | Delibera n° _23_ a.s. 2022-23 | Delibera n° _24_ a.s. 2022-23 | Delibera n° _25_ a.s. 2022-23"
+  },
+  {
+    "id": "86",
+    "file": "verbale18Maggio23.pdf",
+    "data": "",
+    "anno_scolastico": "",
+    "delibere": "Delibera n° _19_ a.s. 2022-23 | Delibera n° _20_ a.s. 2022-23 | Delibera n° _21_ a.s. 2022-23 | Delibera n° _22_ a.s. 2022-23 | Delibera n° _23_ a.s. 2022-23 | Delibera n° _24_ a.s. 2022-23 | Delibera n° _25_ a.s. 2022-23"
   }
 ]

@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Verbali – Collegio Docenti ITTS “C. Grassi”</title>
+  <title>Archivio Delibere – Collegio Docenti ITTS “C. Grassi”</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,22 +17,21 @@
       <label for="anno">Anno scolastico</label>
       <select id="anno">
         <option value="">Tutti gli anni scolastici</option>
-        <!-- Le opzioni verranno riempite in automatico da search.js -->
       </select>
 
-      <label for="oggetto" style="margin-top:1rem;">Oggetto (o parte di oggetto)</label>
+      <label for="oggetto" class="mt-1">Oggetto (o parte di oggetto)</label>
       <input id="oggetto" type="text" placeholder="Es: uscita studenti, PTOF, libri di testo…">
 
-      <button id="cerca" style="margin-top:1rem;">Cerca delibere</button>
+      <button id="cerca" class="mt-1">Cerca delibere</button>
 
       <p class="hint">
         Il sistema cerca nelle righe delle delibere (es. <code>Delibera n° 8 a.s. 2023-24 – Uscita studenti…</code>)
-        filtrando per anno scolastico e testo dell’oggetto.
+        filtrando per anno scolastico e testo dell’oggetto, e restituisce <strong>numero della delibera e data</strong>.
       </p>
     </section>
 
     <section id="results" class="results-section">
-      <!-- qui compaiono i risultati -->
+      <!-- risultati -->
     </section>
   </main>
 

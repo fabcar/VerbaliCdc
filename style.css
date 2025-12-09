@@ -35,27 +35,47 @@ main {
 
 .search-section label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   font-weight: 600;
 }
 
-#search {
+.search-section .mt-1 {
+  margin-top: 0.8rem;
+}
+
+#anno,
+#oggetto {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.7rem;
   border: 1px solid #30363d;
   background: #161b22;
   color: #e6edf3;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
-#search:focus {
+#anno:focus,
+#oggetto:focus {
   outline: 2px solid #58a6ff;
   outline-offset: 2px;
 }
 
+#cerca {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #58a6ff;
+  background: #1f6feb;
+  color: #f0f6fc;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+#cerca:hover {
+  background: #388bfd;
+}
+
 .hint {
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
   font-size: 0.85rem;
   color: #9da7b3;
 }
