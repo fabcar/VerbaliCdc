@@ -68,7 +68,7 @@ searchInput.addEventListener("input", function () {
             : "<em>Nessuna delibera rilevata nel testo del verbale.</em>"}
         </div>
         <div class="result-actions">
-          <a href="verbali/${doc.file}" download>Scarica verbale</a>
+          <a href="verbali/${doc.file}" target="_blank">Apri verbale (PDF)</a>
         </div>
       </div>
     `;
