@@ -70,7 +70,7 @@ function initGapiClient_() {
   gapi.load("client:auth2", async () => {
     try {
       await gapi.client.init({
-        apiKey: GOOGLE_API_KEY, // opzionale se usi solo OAuth
+        
         clientId: GOOGLE_CLIENT_ID,
         discoveryDocs: [
           "https://classroom.googleapis.com/$discovery/rest?version=v1",
