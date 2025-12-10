@@ -153,7 +153,7 @@ const btnCerca = document.getElementById("cerca");
 const resultsDiv = document.getElementById("results");
 
 // Carica data.json locale (finché non usiamo SOLO Classroom)
-fetch("data.json")
+fetch("https://script.google.com/a/macros/itisgrassi.edu.it/s/AKfycbzLElj5gdM7mSIGX24aOmWkuCRIQ2fnB2dPx-I7jOlMuMdSKGWm0lHc-WiqarsXgJTO7g/exec")
   .then(res => res.json())
   .then(data => {
     documents = data || [];
