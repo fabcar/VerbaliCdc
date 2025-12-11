@@ -52,6 +52,7 @@ fetch(SCRIPT_URL)
   .then(res => res.json())
   .then(data => {
     documents = (data && data.items) ? data.items : [];
+   console.log("Documenti caricati:", documents.length, documents); 
     popolaAnni();
   })
   .catch(err => {
