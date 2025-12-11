@@ -37,7 +37,7 @@ btnLogout?.addEventListener("click", () => auth.signOut());
  *******************************/
 
 // 👇 METTI QUI l'URL dello script Apps Script
-const SCRIPT_URL = "https://script.google.com/macros/library/d/1IlwhVPd6bX50Fh2eBspeXQe55Hd1mM9fsFR_dG_nzKf6Jzbd67eX75wj/3";
+const SCRIPT_URL = "https://script.google.com/a/macros/itisgrassi.edu.it/s/AKfycby4ajKXE1auZCj758BZbtHJQXy5W6u7jwZ9MpdaKK4ude9E0XulYQW_lP2yRdU4E6Nggg/exec";
 
 let documents = [];
 
